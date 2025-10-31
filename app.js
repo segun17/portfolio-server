@@ -21,10 +21,14 @@ app.use(cookieParser());
 // CORS
 app.use(
   cors({
-    origin: process.env.CORS_ORIGIN || 'http://localhost:5173',
+    origin: [
+      "https://segun-portfolio-one.vercel.app",
+      "http://localhost:5173"
+    ],
     credentials: true,
   })
 );
+
 
 // Logging
 app.use(morgan(process.env.MORGAN_FORMAT || "dev"));
